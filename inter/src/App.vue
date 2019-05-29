@@ -12,6 +12,23 @@
         :updateLastName="updateLastName"
       />
       <compFriends/>
+
+      <compAbilities>
+        <ul slot="main_hab">
+          <li v-for="(hab, index) in habilities" :key="index">
+            {{ hab }}
+          </li>
+        </ul>
+        <div slot="noted">
+          <p>The user also knows php</p>
+        </div>
+        <div>
+          <a href="#">See more about this user</a>
+        </div>
+        <div :slot="slotName">
+          Other content
+        </div>
+      </compAbilities>
     </div>
 
     <compFooter/>
@@ -22,17 +39,20 @@
   import compFooter from './Components/Header_footer/Footer';
   import compUserProfile from './Components/User/Profile';
   import compFriends from './Components/User/Friends';
+  import compAbilities from './Components/User/Abilities';
 
   export default {
     data() {
       return {
         name: 'Francis',
         lastname: 'Jones',
+        habilities: ['JS', 'CSS', 'HTML'],
         age: 25,
         parents: {
           mother: 'marta',
           father: 'Mario'
-        }
+        },
+        slotName: ''
       }
     },
     methods: {
@@ -44,6 +64,12 @@
       compFooter,
       compUserProfile,
       compFriends,
+      compAbilities,
+    },
+    created() {
+      setTimeout(() => {
+        this.slotName = 'other'
+      }, 3000)
     }
   }
 </script>
