@@ -1,10 +1,15 @@
 <template>
   <div>
     <app-header></app-header>
-
-    <div class="container">
-      <div>{{ name }}</div>
-    </div>
+    {{ name }}
+    <compUserProfile
+      :userName="name"
+      :userLastname="lastname"
+      :userAge="age"
+      :userParents="parents"
+      @updateName="name = $event"
+      :updateLastName="updateLastName"
+    />
 
     <compFooter/>
   </div>
@@ -12,15 +17,28 @@
 
 <script>
   import compFooter from './Components/Header_footer/Footer';
+  import compUserProfile from './Components/User/Profile';
 
   export default {
     data() {
       return {
-        name: 'Lorem'
+        name: 'Francis',
+        lastname: 'Jones',
+        age: 25,
+        parents: {
+          mother: 'marta',
+          father: 'Mario'
+        }
+      }
+    },
+    methods: {
+      updateLastName(value) {
+        this.lastname = value;
       }
     },
     components: {
-      compFooter
+      compFooter,
+      compUserProfile,
     }
   }
 </script>
