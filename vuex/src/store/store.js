@@ -7,7 +7,10 @@ import myName from './Modules/name';
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
-  state: {},
+  state: {
+    car: 'Ferrari',
+    model: 'F1'
+  },
   getters: {},
   mutations: {},
   actions: {},

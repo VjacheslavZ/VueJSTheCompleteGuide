@@ -22,7 +22,7 @@
       }
     },
     methods: {
-      ...mapActions(['swapName'])
+      ...mapActions('myName', ['swapName'])
     }
   }
 

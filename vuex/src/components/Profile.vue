@@ -13,7 +13,7 @@
   export default {
     computed: {
       name() {
-        return this.$store.getters.showName
+        return this.$store.getters['myName/showName']
       },
       age() {
         return this.$store.getters.showAge

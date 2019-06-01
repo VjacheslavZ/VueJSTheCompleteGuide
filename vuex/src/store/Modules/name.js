@@ -1,4 +1,5 @@
 const myName = {
+  namespaced: true,
   state: {
     name: 'Francis',
   },

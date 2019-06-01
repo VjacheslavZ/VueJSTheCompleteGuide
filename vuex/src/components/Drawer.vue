@@ -35,7 +35,8 @@
       }
     },
     computed: {
-      ...mapGetters(['showAge', 'showName']),
+      ...mapGetters(['showAge']),
+      ...mapGetters('myName', ['showName'])
     }
   }
 
