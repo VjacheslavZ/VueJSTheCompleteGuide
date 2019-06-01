@@ -1,24 +1,24 @@
 <template>
-    <div>
-        <div class="item">
-            Name: <span> {{ name }} </span>
-            <br/>
-            Age: <span> {{ age }} </span>
+  <div>
+    <div class="item">
+      Name: <span> {{ name }} </span>
+      <br/>
+      Age: <span> {{ age }} </span>
 
-        </div>
     </div>
+  </div>
 </template>
 
 <script>
-    export default {
-      computed: {
-        name() {
-          return this.$store.state.name
-        },
-        age() {
-          return this.$store.state.age
-        }
+  export default {
+    computed: {
+      name() {
+        return this.$store.getters.showName
+      },
+      age() {
+        return this.$store.getters.showAge
       }
     }
+  }
 </script>
 
