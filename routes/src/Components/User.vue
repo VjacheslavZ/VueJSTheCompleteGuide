@@ -1,10 +1,12 @@
 <template>
     <div>
         <h1>User</h1>
-        <div>
-          {{ userId }}
-        </div>
+        <div>{{ userId }}</div>
+
+        <div>{{ $route.query.user }}</div>
+        <div>{{ $route.query.someThing }}</div>
         <hr>
+
         <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">Francis Jones</h5>
@@ -29,11 +31,12 @@ export default {
   data() {
     return {
       userId: this.$route.params.id,
+
     }
   },
   methods: {
     goToHome() {
-      this.$router.push('/');
+      this.$router.push({ name: 'home' });
     }
   },
   created() {
