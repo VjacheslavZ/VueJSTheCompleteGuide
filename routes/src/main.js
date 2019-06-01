@@ -26,6 +26,15 @@ const router = new VueRouter({
   }
 });
 
+router.beforeEach((to, from, next) => {
+  // if (to.path === '/user') {
+  //   next();
+  // } else {
+  //   next();
+  // }
+  next();
+});
+
 new Vue({
     el:'#app',
     router,
