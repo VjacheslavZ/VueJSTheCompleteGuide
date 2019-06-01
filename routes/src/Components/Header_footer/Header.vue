@@ -3,9 +3,25 @@
         <header>
             <div class="logo">Myweb.com</div>
             <nav>
-                <span><router-link to="/">Home</router-link></span>
-                <span><router-link to="/user">User</router-link></span>
-                <span><router-link to="/about_us">About us</router-link></span>
+                <span>
+                  <router-link
+                    to="/"
+                    tag="span"
+                    active-class="active"
+                    exact
+                  >Home</router-link></span>
+                <span>
+                  <router-link
+                    to="/user"
+                    active-class="active"
+                  >User</router-link>
+                </span>
+                <span>
+                  <router-link
+                    to="/about_us"
+                    active-class="active"
+                  >About us</router-link>
+                </span>
             </nav>
         </header>
     </div>
@@ -50,5 +66,8 @@ header:after {
   display: block;
   height: 0;
   clear: both;
+}
+nav .active {
+  color: red;
 }
 </style>

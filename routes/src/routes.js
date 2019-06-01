@@ -11,4 +11,5 @@ export const routes = [
       { path: 'show', component: AboutContentComp },
     ]},
   { path: '', component: HomeComp, name: 'home' },
+  { path: '*', component: HomeComp }
 ];

@@ -31,7 +31,6 @@ export default {
   data() {
     return {
       userId: this.$route.params.id,
-
     }
   },
   methods: {
