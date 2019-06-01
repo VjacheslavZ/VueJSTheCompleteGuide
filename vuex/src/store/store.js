@@ -28,7 +28,21 @@ export const store = new Vuex.Store({
     }
   },
   actions: {
-
+    addOne({ commit }) {
+      setTimeout(() => {
+        commit('addOne')
+      }, 2000)
+    },
+    restOne({ commit }) {
+      setTimeout(() => {
+        commit('restOne')
+      }, 2000)
+    },
+    swapName({ commit }, payload) {
+      setTimeout(() => {
+        commit('swapName', payload)
+      }, 2000)
+    },
   }
 });
 

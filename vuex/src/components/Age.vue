@@ -20,13 +20,19 @@
 </template>
 
 <script>
-  import { mapMutations } from 'vuex';
-
+  import { mapActions } from 'vuex';
   export default {
     methods: {
-      ...mapMutations(['addOne', 'restOne'])
+      ...mapActions(['addOne', 'restOne'])
     }
   }
+  // import { mapMutations } from 'vuex';
+  //
+  // export default {
+  //   methods: {
+  //     ...mapMutations(['addOne', 'restOne'])
+  //   }
+  // }
 
   // export default {
   //   methods: {

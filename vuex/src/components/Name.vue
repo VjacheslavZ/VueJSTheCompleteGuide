@@ -13,7 +13,7 @@
 
 
 <script>
-  import { mapMutations } from 'vuex';
+  import { mapActions } from 'vuex';
 
   export default {
     data() {
@@ -22,8 +22,20 @@
       }
     },
     methods: {
-      ...mapMutations(['swapName'])
+      ...mapActions(['swapName'])
     }
   }
 
+  // import { mapMutations } from 'vuex';
+  //
+  // export default {
+  //   data() {
+  //     return {
+  //       name: ''
+  //     }
+  //   },
+  //   methods: {
+  //     ...mapMutations(['swapName'])
+  //   }
+  // }
 </script>
