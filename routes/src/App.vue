@@ -1,16 +1,18 @@
 <template>
     <div>
         <app-header/>
-        <div class="container">
 
+        <div class="container">
+          <router-view />
         </div>
+
         <app-footer/>
     </div>
 </template>
 
 <script>
     export default {
-       
+
     }
 </script>
 
