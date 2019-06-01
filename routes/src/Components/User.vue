@@ -1,6 +1,9 @@
 <template>
     <div>
         <h1>User</h1>
+        <div>
+          {{ userId }}
+        </div>
         <hr>
         <div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -13,8 +16,9 @@
                 <li class="list-group-item">Vestibulum at eros</li>
             </ul>
             <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+              <div @click="goToHome">
+                Go back home !!
+              </div>
             </div>
         </div>
     </div>
@@ -22,7 +26,19 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      userId: this.$route.params.id,
+    }
+  },
+  methods: {
+    goToHome() {
+      this.$router.push('/');
+    }
+  },
+  created() {
+    console.log(this.$route)
+  }
 }
 </script>
 
