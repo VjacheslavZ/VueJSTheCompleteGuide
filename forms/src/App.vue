@@ -52,19 +52,55 @@
             </div>
 
             <div class="form-group">
-              <label for="newsLetter">Message</label>
+              <label for="newsLetter">NewsLetter</label>
               <input
                 type="checkbox"
                 id="newsLetter"
-                v-model="formdata.newsLetter"
+                value="newsLetter"
+                v-model="formdata.extras"
               >
               <label for="promotions">Promotions</label>
               <input
                 type="checkbox"
                 id="promotions"
-                v-model="formdata.promotions"
-
+                value="promotions"
+                v-model="formdata.extras"
               >
+              <br/>
+            </div>
+
+            <div class="form-group">
+              <label for="human">
+                <input
+                  type="radio"
+                  id="human"
+                  value="human"
+                  v-model="formdata.gender"
+                >Human
+              </label>
+              <label for="alien">
+                <input
+                  type="radio"
+                  id="alien"
+                  value="alien"
+                  v-model="formdata.gender"
+                >Alien
+              </label>
+
+              {{ formdata.gender }}
+            </div>
+
+            <div class="form-group">
+              <label for="country">Country</label>
+              <select
+                id="country"
+                class="form-control"
+                v-model="formdata.country"
+              >
+                <option :key="index" v-for="(country, index) in countries">
+                  {{ country }}
+                </option>
+              </select>
             </div>
 
             <button
@@ -86,13 +122,20 @@
   export default {
     data() {
       return {
+        countries: [
+          'EEUU',
+          'India',
+          'UK',
+          'Russia',
+        ],
         formdata: {
           name: '',
           lastname: '',
           subject: '',
           message: '',
-          newsLetter: '',
-          promotions: '',
+          extras: [],
+          gender: 'alien',
+          country: 'India',
         }
       }
     },
