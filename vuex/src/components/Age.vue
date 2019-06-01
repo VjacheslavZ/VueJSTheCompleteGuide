@@ -20,14 +20,22 @@
 </template>
 
 <script>
+  import { mapMutations } from 'vuex';
+
   export default {
     methods: {
-      addOne() {
-        this.$store.state.age++
-      },
-      restOne() {
-        this.$store.state.age--
-      }
+      ...mapMutations(['addOne', 'restOne'])
     }
   }
+
+  // export default {
+  //   methods: {
+  //     addOne() {
+  //       this.$store.commit('addOne')
+  //     },
+  //     restOne() {
+  //       this.$store.commit('restOne')
+  //     }
+  //   }
+  // }
 </script>

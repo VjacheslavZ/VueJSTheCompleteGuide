@@ -4,8 +4,8 @@
     <input type="text" v-model="name"/>
     <br>
     <button
-      type=l"submit"
-      @click="swapName"
+      type="submit"
+      @click="swapName(name)"
     >Swap name
     </button>
   </div>
@@ -13,6 +13,8 @@
 
 
 <script>
+  import { mapMutations } from 'vuex';
+
   export default {
     data() {
       return {
@@ -20,9 +22,7 @@
       }
     },
     methods: {
-      swapName() {
-        this.$store.state.name = this.name
-      }
+      ...mapMutations(['swapName'])
     }
   }
 

@@ -17,8 +17,18 @@ export const store = new Vuex.Store({
     }
   },
   mutations: {
+    addOne(state) {
+      state.age++
+    },
+    restOne(state) {
+      state.age--
+    },
+    swapName(state, payload) {
+      state.name = payload;
+    }
+  },
+  actions: {
 
   }
-
 });
 
