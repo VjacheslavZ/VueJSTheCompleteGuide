@@ -1,10 +1,10 @@
 <template>
     <div class="container">
        <div class="content sign">
-          
+
           <form @submit.prevent="onSubmit">
             <h1>Sign up</h1>
-           
+
 
               <div class="input_field">
                   <label>Email</label>
@@ -15,7 +15,7 @@
                   <label>Password</label>
                   <input type="password" v-model="formdata.password" />
               </div>
-              
+
               <button>
                   Sign up
               </button>
@@ -39,7 +39,7 @@
         },
         methods: {
             onSubmit () {
-                console.log(this.formdata)
+                this.$store.dispatch('signup', this.formdata)
             }
         }
     }
