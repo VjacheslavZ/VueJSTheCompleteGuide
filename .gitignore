@@ -1,5 +1,4 @@
-auth/config.js/
-
+auth/src/config/
 .DS_Store
 node_modules/
 dist/

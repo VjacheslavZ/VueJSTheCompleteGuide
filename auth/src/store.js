@@ -5,7 +5,7 @@ import router from './routes';
 
 Vue.use(Vuex);
 
-import { FbAuth, FbApiKey } from "../config";
+import { FbAuth, FbApiKey } from "./config/config";
 
 export default new Vuex.Store({
 	state: {
