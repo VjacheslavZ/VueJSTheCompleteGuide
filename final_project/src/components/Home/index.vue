@@ -1,15 +1,18 @@
 <template>
   <div>
     <compFeatured />
+    <comp-content />
   </div>
 </template>
 
 <script>
   import compFeatured from './featured';
+  import compContent from './content';
 
 	export default {
 		components: {
 			compFeatured,
+			compContent,
     }
 	}
 </script>
