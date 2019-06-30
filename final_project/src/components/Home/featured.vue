@@ -6,8 +6,25 @@
       :paginationEnabled="false"
     >
       <slide v-for="(slide, index) in slides" :key="index">
-        <div>
-          hello
+        <div
+          class="slider_bck"
+          :style="{'background': `url(${slide.bck})`}"
+        >
+          <div class="gradient">
+            <div class="container">
+              <div class="content">
+                <app-button
+                  type="link"
+                  linkTo="#"
+                >
+                  See review
+                </app-button>
+                <div class="item">
+                  {{ slide.title }}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </slide>
     </carousel>
@@ -43,6 +60,11 @@
 					},
         ]
       };
+    },
+    methods: {
+      trigger() {
+        console.log('sssssssssss')
+      },
     },
 		components: {
 			Slide,
