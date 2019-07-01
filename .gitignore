@@ -11,3 +11,5 @@ yarn-error.log
 *.ntvs*
 *.njsproj
 *.sln
+
+final_project/src/config/index.js

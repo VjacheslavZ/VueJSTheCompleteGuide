@@ -3,7 +3,7 @@
     <div class="signin_container">
       <h1>Sign in</h1>
 
-      <form @sumbit.prevent="onSubmit">
+      <form v-on:submit.prevent="onSubmit">
         <div class="input_field">
           <label for="email">Email</label>
           <input type="email" id="email" v-model="formData.email">
@@ -25,14 +25,14 @@
 		data() {
 			return {
 				formData: {
-					email: '',
-          password: '',
+					email: 'slavikov.net@gmail.com',
+          password: 'zxcv1234',
         }
       }
     },
     methods: {
 	    onSubmit() {
-	    	console.log('sdasdas')
+	    	this.$store.dispatch('admin/signIn', this.formData)
       }
     }
 	}
