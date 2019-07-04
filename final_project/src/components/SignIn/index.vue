@@ -13,7 +13,7 @@
             type="email"
             id="email"
             @blur="$v.formData.email.$touch()"
-            v-model="formData.email"
+            v-model.trim="formData.email"
           >
           <div v-if="$v.formData.email.$error">
             <p class="error_label" v-if="!$v.formData.email.required">
@@ -33,8 +33,8 @@
           <input
             type="password"
             id="password"
-            v-model="formData.password"
             @blur="$v.formData.password.$touch()"
+            v-model.trim="formData.password"
           >
           <div v-if="$v.formData.password.$error">
             <p class="error_label" v-if="!$v.formData.password.required">
@@ -50,6 +50,10 @@
 
         <p class="error_label" v-if="error">
           something is wrong
+        </p>
+
+        <p class="error_label" v-if="authFailed">
+          Please check your email or password
         </p>
       </form>
 
@@ -69,6 +73,14 @@
           password: '',
         }
       }
+    },
+    computed:{
+	    authFailed() {
+	    	return this.$store.state.admin.authFailed
+      }
+    },
+    destroyed() {
+      this.$store.commit('admin/authFailed', 'reset')
     },
     validations: {
 	    formData: {
